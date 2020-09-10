@@ -1,0 +1,33 @@
+Ejemplos basicos de uso de la herramienta de cracking Hashcat
+
+Tipos de ataque
+
+0 - Straigh - Ataque por diccionario
+1 - Combination -  Combina las palabras de los diccionarios suministrados como argumento
+3 - Brute force - Hashcat genera las propias contraseñas
+4 - Hybrid - Combinacion de Brute Force y Straigh
+
+Sistema operativo - Hash
+
+Unix - MD5 hash
+Kali Linux - SHA512 hash
+Windows XP - LM Hash
+Windows 7 - NTLM Hash
+
+Hashcat SHA512 $6$ shadow file  
+hashcat -m 1800 -a 0 hash.txt rockyou.txt --username
+
+Hashcat MD5 $1$ shadow file  
+hashcat -m 500 -a 0 hash.txt rockyou.txt --username
+
+Hashcat MD5 Apache webdav file  
+hashcat -m 1600 -a 0 hash.txt rockyou.txt
+
+Hashcat SHA1  
+hashcat -m 100 -a 0 hash.txt rockyou.txt --force
+
+Hashcat Wordpress  
+hashcat -m 400 -a 0 --remove hash.txt rockyou.txt
+
+
+
